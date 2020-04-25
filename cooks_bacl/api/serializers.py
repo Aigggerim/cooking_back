@@ -1,10 +1,14 @@
 from rest_framework import serializers
-from api.models import Recipe, Cook, Comment
+from api.models import Recipe, Cook, Comment, Manager
 
 class CookSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cook
         fields = 'id','name'
+class ManagerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Manager
+        fields = 'id','username'
 
 class RecipeSerializer(serializers.Serializer):
     id = serializers.IntegerField(required=False)

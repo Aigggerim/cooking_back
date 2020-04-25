@@ -16,3 +16,7 @@ class Comment(models.Model):
     username = models.TextField()
     commentData = models.TextField()
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE, blank=True, null=True)
+
+class Manager(models.Model):
+    username = models.CharField(max_length=99)
+    password = models.CharField(max_length=99)
